@@ -1,17 +1,18 @@
-var thisDate = 1; //Track current date being written in calendar
+//var thisDate = 1;                                         //Track current date being written in calendar
 var monthList = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
 var dayList = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
-var today = new Date(); //Date object to store current date
-var todaysDate = today.getDate(); //Store the current Date number (1-31)
-var todaysDay = today.getDay(); //Store the current day number (1-7)
-var todaysMonth = today.getMonth(); //Store the current month number (1-12)
-var todaysYear = today.getFullYear(); //Store the current year
-var monthNumber = todaysMonth; //Track current month
-var yearNumber = todaysYear; //Track current year
-//var firstDate = new Date(String(monthNum)+"/1/"+String(yearNum)); //Data object to store the first day pf current month
-//var lastDate = new Date(String(monthNum+1)+"/0/"+String(yearNum)); //Data object to store the last day of current 
-var firstDate = new Date(yearNumber, monthNumber, 1);
-var lastDate = new Date(yearNumber, monthNumber + 1, 0);
+var dayListShort = new Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+var today = new Date();                                     //Date object to store current date
+var todaysDate = today.getDate();                           //Store the current Date number (1-31)
+var todaysDay = today.getDay();                             //Store the current day number (0-6)
+var todaysMonth = today.getMonth();                         //Store the current month number (0-11)
+var todaysYear = today.getFullYear();                       //Store the current year
+var monthNumber = todaysMonth;                              //Track current month
+var yearNumber = todaysYear;                                //Track current year
+//var firstDate = new Date(String(monthNum)+"/1/"+String(yearNum)); 
+//var lastDate = new Date(String(monthNum+1)+"/0/"+String(yearNum)); 
+var firstDate = new Date(yearNumber, monthNumber, 1);       //Data object to store the first day pf current month
+var lastDate = new Date(yearNumber, monthNumber + 1, 0);    //Data object to store the last day of current 
 var firstDay = firstDate.getDay() + 1; // Track the day number 1-7 of the first day of the current month
 var numberOfDays = 0;
 var calendarString = "";
@@ -57,77 +58,9 @@ function changeDate(buttonPressed) {
     numberOfDays = lastDate.getDate();
 
     createCalendar();
-    //test();
 }
 
 function createCalendar() {
-    calendarString = "";
-    var dayCounter = 0;
-    // Row 1 as in illustration
-    calendarString += "<table border=1>";
-    calendarString += "<tr>";
-    calendarString += "<td align='center' valign='center' width='100' height='50' colspan='2'><a href='#' onclick=\"changeDate('previousMonth')\">Previous Month</a></td>";
-    calendarString += "<td align='center' valign='center' width='150' height='50' colspan='3'><b>" + monthList[monthNumber] + '&nbsp;' + yearNumber + "</b></td>";
-    calendarString += "<td align='center' valign='center' width='100' height='50' colspan='2'><a href='#' onclick=\"changeDate('nextMonth')\">Next Month</a></td>";
-    calendarString += "</tr>";
-
-    // Row 2 as in illustration"
-    calendarString += "<tr>";
-    calendarString += "<td align='center' valign='center' width='50' height='50'> Sun </td>";
-    calendarString += "<td align='center' valign='center' width='50' height='50'> Mon </td>";
-    calendarString += "<td align='center' valign='center' width='50' height='50'> Tue </td>";
-    calendarString += "<td align='center' valign='center' width='50' height='50'> Wed </td>";
-    calendarString += "<td align='center' valign='center' width='50' height='50'> Thu </td>";
-    calendarString += "<td align='center' valign='center' width='50' height='50'> Fri </td>";
-    calendarString += "<td align='center' valign='center' width='50' height='50'> Sat </td>";
-    calendarString += "</tr>";
-
-    thisDate == 1;
-
-    // Row 3-8
-    // for (var i=1;i<=6;i++){
-    //     calendarString+="<tr>";
-    //     for (var j=1;j<=7;j++){
-    //         dayCounter=(thisDate-firstDay) +1;
-    //         thisDate++; 
-    //         if ((dayCounter>numberOfDays)||(dayCounter<1)){
-    //             calendarString+="<td align='center' height='50' width='50'>&nbsp;</td>";
-    //         }else{
-    //             if((todaysDay==j)&&(todaysDate==dayCounter)&&(todaysMonth==monthNumber)){
-    //                 if ((todaysDay==x)&&(todaysDate==dayCounter)&&(todaysMonth==monthNumber)){
-    //                     calendarString += "<td align='center' height='50' width='50'><a href='#'>'" + daycounter + "'</a></td>";
-    //                 }
-    //                 calendarString += "<td align='center' height='50' width='50'><a href='#'>'" + daycounter + "'</a></td>";
-    //             }else{
-    //                 calendarString += "<td align='center' height='50' width='50'><a href='#'>'" + daycounter + "'</a></td>";
-    //             }
-    //         }
-    //     }
-    //     calendarString+="</tr>";
-    // }
-
-    counter = numberOfDays;
-    reverseCounter = 0;
-    var flag = false;
-    // first row
-    calendarString+="<tr>";
-    for (var i=0;i<7;i++){
-        if ((firstDay>=i)||flag){
-            calendarString += "<td align='center' height='50' width='50'>" + (i+1) + "</a></td>";
-            flag = true;
-        }
-        else{
-            calendarString += "<td align='center' height='50' width='50'>" + "&nbsp" + "</a></td>";
-        }
-    }
-    calendarString+="</tr>";
-
-    // Row 9
-    calendarString += "<tr>";
-    calendarString += "<td align='center' valign='center' width='350' height='50' colspan='7' nowrap><a href='#' onclick=\"changeDate('startRender')\"><b>Today</b></a></td";
-    calendarString += "</tr>";
-
-    calendarString += "</table>";
     /**
      * Illustration of Calendar
      * R1:  <previousMonth>         <Month Year>        <nextMonth>
@@ -141,10 +74,87 @@ function createCalendar() {
      * R9:                   <Go back to current date>
      */
 
+
+    calendarString = "";
+    var dayCounter = 0;
+    // Row 1 as in illustration
+    calendarString += "<table border=1>";
+    calendarString += "<tr>";
+    calendarString += "<td align='center' valign='center' width='100' height='50' colspan='2'><a href='#' onclick=\"changeDate('previousMonth')\">Previous Month</a></td>";
+    calendarString += "<td align='center' valign='center' width='150' height='50' colspan='3'><b>" + monthList[monthNumber] + '&nbsp;' + yearNumber + "</b></td>";
+    calendarString += "<td align='center' valign='center' width='100' height='50' colspan='2'><a href='#' onclick=\"changeDate('nextMonth')\">Next Month</a></td>";
+    calendarString += "</tr>";
+
+    // Row 2 as in illustration
+    calendarString += "<tr>";
+    for (var h = 0; h < 7; h++) {
+        calendarString += "<td align='center' valign='center' width='50' height='50'>" + dayListShort[h] + "</td>";
+    }
+    calendarString += "</tr>";
+
+    // Row 3-8
+    var counter = numberOfDays;                              // Save total number of days
+    var reverseCounter = 1;                                  // Count days from 1 to total, for printing purpose
+    var firstDayFlag = false;                                // Decide how many columns to draw before the first day
+    var detectFill = 0;                                      // Detect how many columns are filled before printing first day
+    var rowCount = 1;                                        // Count the number of rows filled
+
+        // Row 3
+        calendarString += "<tr>";
+        for (var i = 0; i < 7; i++) {
+            // Start printing day when i is equal to the first day (0-6)
+            if ((firstDay == i) || firstDayFlag) {
+                calendarString += "<td align='center' height='50' width='50'>" + reverseCounter + "</a></td>";
+                firstDayFlag = true;
+                reverseCounter += 1; 
+                counter--;
+                detectFill++;
+            }
+            else {
+                calendarString += "<td align='center' height='50' width='50'>" + "&nbsp" + "</a></td>";
+                detectFill++;
+            }
+        }
+        calendarString += "</tr>";
+
+        // Row 4-8 or Row 4-7
+        while (counter > 0) {
+            rowCount++;
+            calendarString += "<tr>";
+            for (var j = 0; j < 7; j++) {
+                calendarString += "<td align='center' height='50' width='50'>" + reverseCounter + "</a></td>";
+                reverseCounter += 1;
+                counter--;
+                detectFill++;
+                if (counter == 0) {
+                    break;
+                }
+            }
+            if (counter == 0) {
+                var columnToFill = (rowCount * 7) - detectFill ;
+                for (var k = 0; k < columnToFill; k++) {
+                    calendarString += "<td align='center' height='50' width='50'>" + "&nbsp" + "</a></td>";
+                }
+                break;
+            }
+            calendarString += "</tr>";
+
+        }
+
+    // Row 9
+    calendarString += "<tr>";
+    calendarString += "<td align='center' valign='center' width='350' height='50' colspan='7' nowrap><a href='#' onclick=\"changeDate('startRender')\"><b>Today</b></a></td";
+    calendarString += "</tr>";
+
+    calendarString += "</table>";
+
+    // decorate today
+
+
     var object = document.getElementById('calendar');
     object.innerHTML = calendarString;
 
-    var str = "Day counter: " + dayCounter + " This date: " + thisDate + " First day: " + firstDay + " Counter: " + counter;
+    var str = "Day counter: " + dayCounter + " First day: " + firstDay + " Counter: " + columnToFill;
     var object2 = document.getElementById('testMessage');
     object2.innerHTML = str;
 }
