@@ -1,0 +1,24 @@
+/**
+ * Author: Alfred Loo
+ * Date Edited: 12/04/2018
+ * Contact: alfred97620@gmail.com
+ * Link: https://github.com/Alfred20697
+ * Version: 0.2
+ * License: N/A
+ * Credits To:  Yusuf Shakeel (https://github.com/yusufshakeel/dyCalendarJS), 
+ *              Clark Hey (http://www.javascriptkit.com/script/script2/eventscalendar.shtml#)
+ */
+
+.table-center{
+    text-align: center;
+ }
+
+ .today{
+    background-color: rgb(68, 68, 211);
+    color : #fff;
+    border-radius: 2px;
+ }
+
+
+ /* Task to be done:
+ 1. Implement better style and design with reference to dycalendar.css */

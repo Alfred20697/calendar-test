@@ -1,3 +1,13 @@
+<!-- 
+Author: Alfred Loo
+Date Edited: 12/04/2018
+Contact: alfred97620@gmail.com
+Link: https://github.com/Alfred20697
+Version: 0.2
+License: N/A
+Credits To: Clark Hey (http://www.javascriptkit.com/script/script2/eventscalendar.shtml#)
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,180 +17,65 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Calendar</title>
 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
+    <script src="myEvent.js"></script>
+
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="dycalendar.css" /> -->
-    <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="myEvent.js"></script>
-</head>
-
-<body onload="changeDate('startRender')">
-    <h2>Calendar</h2>
-    <h3>Training Calendar</h3>
-
-    <center>
-        <table>
-            <tbody>
-                <tr>
-                    <td style="padding: 3px;" align="center" valign="top" width="350">
-                        <div id="calendar">
-                            <!-- Dynamically Filled -->
-                            Hello
-                        </div>
-                    </td>
-                    <td width=10>
-                    </td>
-                    <td style="padding: 3px;" align="center" valign="top" width="250">
-                        <b>Instructions: </b>
-                        <br> Click a highlighted date on the calendar to see a list of events on the day in the box below.
-                        <br>
-                        <br>
-                        <center>
-                            <b>
-                                <u>Events</u>
-                            </b>
-                            <form id="eventform" name="eventform" action="#" method="get">
-                                <textarea name="eventlist" cols="25" rows="11" wrap="soft">Autofilled when clicking on date. (with events)</textarea>
-                            </form>
-                        </center>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </center>
-
-    <div id="testMessage">
-
-    </div>
-
-    <!-- <div id="sample-calendar" class="dycalendar-container skin-purple shadow-default">
-    </div> -->
-
-    <!-- javascript -->
-    <!-- <script src="dycalendar.js"></script>
-    <script>
-        dycalendar.draw({
-            target: '#sample-calendar',
-            type: 'month',
-            highlighttoday: true,
-            prevnextbutton: "show"
-        });
-    </script> -->
-
-
-    <!-- <h3>Training Calendar</h3>
-    <table style="width:100%;border-collapse:separate;">
-        <tr>
-            <td>
-                <table style="width:100%;empty-cells:show;">
-                    <tr>
-                        <td style="width:15%;border-top-width:0px;border-left-width:0px;">
-                            <table style="width:100%;">
-                                <tr>
-                                    <td>Course Date</td>
-                                    <td style="width:1px;text-align:right;">
-                                        <span class="dx-vam">&nbsp;</span>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td style="width:45%;border-top-width:0px;border-left-width:0px;">
-                            <table style="width:100%;">
-                                <tr>
-                                    <td>Course Name</td>
-                                    <td style="width:1px;text-align:right;">
-                                        <span class="dx-vam">&nbsp;</span>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td style="width:25%;border-top-width:0px;border-left-width:0px;">
-                            <table style="width:100%;">
-                                <tr>
-                                    <td>Target Group</td>
-                                    <td style="width:1px;text-align:right;">
-                                        <span class="dx-vam">&nbsp;</span>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td style="width:15%;border-top-width:0px;border-left-width:0px;border-right-width:0px;">
-                            <table style="width:100%;">
-                                <tr>
-                                    <td>* Available Seats</td>
-                                    <td style="width:1px;text-align:right;">
-                                        <span class="dx-vam">&nbsp;</span>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>18/4/2018</td>
-                        <td>
-                            <a href="Training.aspx?intTrainingID=13">Excellent Communication Through Essential English Grammar</a>
-                        </td>
-                        <td>Non-Execs level</td>
-                        <td class="center dxgv dx-ar" style="border-right-width:0px;">6</td>
-                    </tr>
-                    <tr>
-                        <td>23/4/2018</td>
-                        <td>
-                            <ahref="Training.aspx?intTrainingID=10">Effective Interpersonal Skills - Grp 1</a>
-                        </td>
-                        <td>All Levels</td>
-                        <tdstyle="border-right-width:0px;">5</td>
-            </tr>
-            <tr>
-                <td>30/4/2018</td>
-                <td>
-                    <a href="Training.aspx?intTrainingID=22">Lunch &amp; Learn Talk - The Mind Maturity Process</a>
-                </td>
-                <td>HQ Staff</td>
-                <td style="border-right-width:0px;">50</td>
-            </tr>
-            <tr>
-                <td>8/5/2018</td>
-                <td>
-                    <a href="Training.aspx?intTrainingID=12">Effective Interpersonal Skills - Grp 2</a>
-                </td>
-                <td>All Levels</td>
-                <tdstyle="border-right-width:0px;">2</td>
-            </tr>
-            <tr>
-                <td>15/5/2018</td>
-                <td>
-                    <a ref="Training.aspx?intTrainingID=14">Customer Service Skills</a>
-                </td>
-                <td>Execs level</td>
-                <td style="border-right-width:0px;">3</td>
-            </tr>
-            </table>
-            <div>
-                <div>
-                    <b>Page 1 of 2 (6 items)</b>
-                    <b>
-                        <img src="/DXR.axd?r=1_35-_lZ_c" alt="Prev" />
-                    </b>
-                    <b>1</b>
-                    <a>2</a>
-                    <a>
-                        <img alt="Next" />
-                    </a>
-                </div>
-                <b></b>
-            </div> -->
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+        crossorigin="anonymous">
+</head>
 
+<body onload="changeDate('startRender')">
+    <div class="container">
+        <h2>Calendar</h2>
+        <h3>Training Calendar</h3>
+
+        <table class="table table-center">
+            <tbody>
+                <tr>
+                    <td>
+                        <b>Event (Click on highlighted date to show details)</b>
+                        <div id="event">
+                            <!-- Dynamically Filled -->
+
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Event Date</th>
+                                        <th>Event Name</th>
+                                        <th>Target Group</th>
+                                        <th>Seats Available</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="calendar">
+                            <!-- Dynamically Filled -->
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>
+
+
+<!-- Task to be done:
+1. Think of better document organisation
+2. Think of more elements to add -->
