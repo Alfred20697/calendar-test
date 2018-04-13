@@ -237,18 +237,6 @@ function checkEvent(day, month, year) {
     }
 }
 
-function countEventxx(day, month, year) {
-    let numberOfEvents = 0;
-
-    for (let i = 0; i < myEvent.length; i++) {
-        if ((myEvent[i][0] == day) && (myEvent[i][1] == month) && (myEvent[i][2] == year)) {
-            numberOfEvents++;
-        }
-    }
-
-    return numberOfEvents;
-}
-
 function showEvent(day, month, year) {
     let eventString = "";
     eventString += "<table class=\"table table-bordered\">";
