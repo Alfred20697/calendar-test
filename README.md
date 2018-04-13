@@ -1,6 +1,5 @@
 # calendar-test
-
-##Task to be done
+## Task to be done
 - [ ] Think of better document organisation
 - [ ] Think of more elements to add
 - [ ] Implement better algorithm for creating timetable and event table with reference to dycalendar.js
