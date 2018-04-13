@@ -52,13 +52,11 @@
     font-weight: bold;
  }
 
- .event-today{
-    background-color: #BBDEFB;
-    color : #1976D2;
-    border-radius: 50%;
+ .event sup{
+    color: #fff;
     font-weight: bold;
  }
- 
+
  .today a,
  .today a:hover,
  .event a,
@@ -66,20 +64,19 @@
     color: #E3F2FD;
  }
 
+ /* Specification: Event & Today */
+ .event-today{
+    background-color: #BBDEFB;
+    color : #1976D2;
+    border-radius: 50%;
+    font-weight: bold;
+ }
+
  .event-today a,
  .event-today a:hover{
     color: #1976D2;
  }
 
- .event sup{
-    color: #fff;
-    font-weight: bold;
- }
-
- .event-today{
-    color: #1976D2;
-    font-weight: bold;
- }
-
+ 
  /* Task to be done:
  1. Implement better style and design with reference to dycalendar.css */
