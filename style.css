@@ -14,8 +14,17 @@
     border-top: none !important; 
 }
 
-.table-center{
+ .table-center{
     text-align: center;
+    padding: 100%;
+ }
+
+ .no-center{
+    text-align: initial;
+ }
+
+ .table-fix-layout{
+    table-layout: fixed;
  }
 
  .table-head{
@@ -23,8 +32,20 @@
     color : #fff;
  }
 
- .table-width{
+ .table-width-14{
     width: 14%;
+ }
+
+ .table-width-15{
+    width: 15%;
+ }
+
+ .table-width-45{
+    width: 45%;
+ }
+
+ .table-width-42{
+    width: 42%;
  }
 
  .table-button-top{
@@ -48,12 +69,7 @@
  .event{
     background-color:  #1E88E5;
     color: #E3F2FD;
-    border-radius: 50%;
-    font-weight: bold;
- }
-
- .event sup{
-    color: #fff;
+    border-radius: 100%;
     font-weight: bold;
  }
 
@@ -77,6 +93,11 @@
     color: #1976D2;
  }
 
- 
+ @media screen and (max-width: 600px) {
+    .table-fix-layout{
+        table-layout: auto;
+     }
+ }
+
  /* Task to be done:
  1. Implement better style and design with reference to dycalendar.css */

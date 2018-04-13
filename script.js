@@ -24,7 +24,6 @@ let lastDate = new Date(yearNumber, monthNumber + 1, 0);    //Data object to sto
 let firstDay = firstDate.getDay() + 1;                      //Track the day number 1-7 of the first day of the current month
 let numberOfDays = 0;
 let calendarString = "";
-let numberOfEvents = 0;
 
 function changeDate(buttonPressed) {
     if (buttonPressed == "previousYear") {
@@ -82,11 +81,11 @@ function createCalendar() {
     calendarString = "";
 
     // Row 1
-    calendarString += "<table class=\"table\">";
+    calendarString += "<table class=\"table table-bordered table-fix-layout\">";
     calendarString += "<thead class=\"table-head\">";
     calendarString += "<tr>";
 
-    calendarString += "<th class=\"table-width\">";
+    calendarString += "<th class=\"\">";
     calendarString += "<a href=\"#\" ";
     calendarString += "class=\"table-button-top\"";
     calendarString += "onclick=\"changeDate('previousMonth')\">";
@@ -94,27 +93,27 @@ function createCalendar() {
     calendarString == "</a>";
     calendarString += "</th>";
 
-    calendarString += "<th class=\"table-width\">";
+    calendarString += "<th class=\"\">";
     // calendarString += "<a href=\"#\" ";
     // calendarString += "class=\"table-button-top\"";
-    // calendarString += "onclick=\"changeDate('previousMonth')\">";
+    // calendarString += "onclick=\"changeDate('previousYear')\">";
     calendarString += "Prev Month";
     calendarString == "</a>";
     calendarString += "</th>";
 
-    calendarString += "<th colspan=\"3\">";
+    calendarString += "<th class=\"\" colspan=\"3\">";
     calendarString += "" + monthList[monthNumber] + "&nbsp;" + yearNumber;
     calendarString += "</th>";
 
-    calendarString += "<th class=\"table-width\">";
+    calendarString += "<th class=\"\">";
     // calendarString += "<a href=\"#\" ";
     // calendarString += "class=\"table-button-top\"";
-    // calendarString += "onclick=\"changeDate('nextMonth')\">";
+    // calendarString += "onclick=\"changeDate('nextYear')\">";
     calendarString += "Next Month";
     calendarString == "</a>";
     calendarString += "</th>";
 
-    calendarString += "<th class=\"table-width\">";
+    calendarString += "<th class=\"\">";
     calendarString += "<a href=\"#\" ";
     calendarString += "class=\"table-button-top\"";
     calendarString += "onclick=\"changeDate('nextMonth')\">";
@@ -163,9 +162,6 @@ function createCalendar() {
                     calendarString += "onclick=\"showEvent(" + printedDayCounter + ", " + (monthNumber + 1) + ", " + yearNumber + ")\">";
                     calendarString += "" + printedDayCounter;
                     calendarString += "</a>";
-                    calendarString += "<sup>";
-                    calendarString += "" + numberOfEvents;
-                    calendarString += "</sup>";
                     calendarString += "</td>";
                     printedDayCounter++;
                 }
@@ -175,9 +171,6 @@ function createCalendar() {
                     calendarString += "onclick=\"showEvent(" + printedDayCounter + ", " + (monthNumber + 1) + ", " + yearNumber + ")\">";
                     calendarString += "" + printedDayCounter;
                     calendarString += "</a>";
-                    calendarString += "<sup>";
-                    calendarString += "" + numberOfEvents;
-                    calendarString += "</sup>";
                     calendarString += "</td>";
                     printedDayCounter++;
                 }
@@ -221,7 +214,7 @@ function createCalendar() {
 }
 
 function checkEvent(day, month, year) {
-    numberOfEvents = 0;
+    let numberOfEvents = 0;
 
     for (let i = 0; i < myEvent.length; i++) {
         if ((myEvent[i][0] == day) && (myEvent[i][1] == month) && (myEvent[i][2] == year)) {
@@ -239,13 +232,13 @@ function checkEvent(day, month, year) {
 
 function showEvent(day, month, year) {
     let eventString = "";
-    eventString += "<table class=\"table table-bordered\">";
+    eventString += "<table class=\"table table-bordered table-fix-layout\">";
     eventString += "<thead class=\"table-head\">";
     eventString += "<tr>";
-    eventString += "<th>" + "Course Date" + "</th>";
-    eventString += "<th>" + "Course Name" + "</th>";
-    eventString += "<th>" + "Target Group" + "</th>";
-    eventString += "<th>" + "* Available Seats" + "</th>";
+    eventString += "<th class=\"table-width-15\">" + "Course Date" + "</th>";
+    eventString += "<th class=\"table-width-45 no-center\">" + "Course Name" + "</th>";
+    eventString += "<th class=\"table-width-15\">" + "Target Group" + "</th>";
+    eventString += "<th class=\"table-width-15\">" + "* Available Seats" + "</th>";
     eventString += "</tr>";
     eventString += "</thead>";
 
@@ -255,7 +248,7 @@ function showEvent(day, month, year) {
             eventString += "<tr>";
             eventString += "<td>" + day + " " + monthList[monthNumber] + " " + year + "</td>";
             // insert course url
-            eventString += "<td>"
+            eventString += "<td class=\"no-center\">"
             eventString += "<a href=";
             eventString += "\"" + myEvent[i][8] + "\">";
             eventString += myEvent[i][5];
