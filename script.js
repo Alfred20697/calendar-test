@@ -1,11 +1,11 @@
 /**
  * Author: Alfred Loo
- * Date Edited: 12/04/2018
+ * Date Edited: 13/04/2018
  * Contact: alfred97620@gmail.com
  * Link: https://github.com/Alfred20697
- * Version: 0.2
+ * Version: 0.3
  * License: N/A
- * Credits To:  Yusuf Shakeel (https://github.com/yusufshakeel/dyCalendarJS), 
+ * Credits To:  Yusuf Shakeel (https://github.com/yusufshakeel/dyCalendarJS),
  *              Clark Hey (http://www.javascriptkit.com/script/script2/eventscalendar.shtml#)
  */
 
@@ -24,6 +24,7 @@ let lastDate = new Date(yearNumber, monthNumber + 1, 0);    //Data object to sto
 let firstDay = firstDate.getDay() + 1;                      //Track the day number 1-7 of the first day of the current month
 let numberOfDays = 0;
 let calendarString = "";
+let numberOfEvents = 0;
 
 function changeDate(buttonPressed) {
     if (buttonPressed == "previousYear") {
@@ -81,12 +82,48 @@ function createCalendar() {
     calendarString = "";
 
     // Row 1
-    calendarString += "<table class=\"table table-bordered\">";
+    calendarString += "<table class=\"table\">";
+    calendarString += "<thead class=\"table-head\">";
     calendarString += "<tr>";
-    calendarString += "<td colspan=\"2\"><a href=\"#\" class=\"btn btn\" role=\"button\" onclick=\"changeDate('previousMonth')\"><i class=\"fas fa-chevron-left\"></i></a></td>";
-    calendarString += "<td colspan=\"3\"><b>" + monthList[monthNumber] + "&nbsp;" + yearNumber + "</b></td>";
-    calendarString += "<td colspan=\"2\"><a href=\"#\" class=\"btn btn\" role=\"button\" onclick=\"changeDate('nextMonth')\"><i class=\"fas fa-chevron-right\"></i></a></td>";
+
+    calendarString += "<th class=\"table-width\">";
+    calendarString += "<a href=\"#\" ";
+    calendarString += "class=\"table-button-top\"";
+    calendarString += "onclick=\"changeDate('previousMonth')\">";
+    calendarString += "<i class=\"fas fa-chevron-left fa-lg\"></i>";
+    calendarString == "</a>";
+    calendarString += "</th>";
+
+    calendarString += "<th class=\"table-width\">";
+    // calendarString += "<a href=\"#\" ";
+    // calendarString += "class=\"table-button-top\"";
+    // calendarString += "onclick=\"changeDate('previousMonth')\">";
+    calendarString += "Prev Month";
+    calendarString == "</a>";
+    calendarString += "</th>";
+
+    calendarString += "<th colspan=\"3\">";
+    calendarString += "" + monthList[monthNumber] + "&nbsp;" + yearNumber;
+    calendarString += "</th>";
+
+    calendarString += "<th class=\"table-width\">";
+    // calendarString += "<a href=\"#\" ";
+    // calendarString += "class=\"table-button-top\"";
+    // calendarString += "onclick=\"changeDate('nextMonth')\">";
+    calendarString += "Next Month";
+    calendarString == "</a>";
+    calendarString += "</th>";
+
+    calendarString += "<th class=\"table-width\">";
+    calendarString += "<a href=\"#\" ";
+    calendarString += "class=\"table-button-top\"";
+    calendarString += "onclick=\"changeDate('nextMonth')\">";
+    calendarString += "<i class=\"fas fa-chevron-right fa-lg\"></i>";
+    calendarString == "</a>";
+    calendarString += "</th>";
+
     calendarString += "</tr>";
+    calendarString += "</thead>";
 
     // Row 2
     calendarString += "<tr>";
@@ -121,11 +158,27 @@ function createCalendar() {
         if ((i >= firstDay) && (i <= (numberOfDays + firstDay - 1))) {
             if (checkEvent(printedDayCounter, monthNumber + 1, yearNumber)) {
                 if ((printedDayCounter == (todaysDate)) && (monthNumber == todaysMonth) && (yearNumber == todaysYear)) {
-                    calendarString += "<td class=\"today\"><a href=\"#\" onclick=\"showEvent(" + printedDayCounter + ", " + (monthNumber + 1) + ", " + yearNumber + ")\">" + printedDayCounter + "</a></td>";
+                    calendarString += "<td class=\"event-today\">";
+                    calendarString += "<a href=\"#\" ";
+                    calendarString += "onclick=\"showEvent(" + printedDayCounter + ", " + (monthNumber + 1) + ", " + yearNumber + ")\">";
+                    calendarString += "" + printedDayCounter;
+                    calendarString += "</a>";
+                    calendarString += "<sup>";
+                    calendarString += "" + numberOfEvents;
+                    calendarString += "</sup>";
+                    calendarString += "</td>";
                     printedDayCounter++;
                 }
                 else {
-                    calendarString += "<td><a href=\"#\" onclick=\"showEvent(" + printedDayCounter + ", " + (monthNumber + 1) + ", " + yearNumber + ")\">" + printedDayCounter + "</a></td>";
+                    calendarString += "<td class=\"event\">";
+                    calendarString += "<a href=\"#\" ";
+                    calendarString += "onclick=\"showEvent(" + printedDayCounter + ", " + (monthNumber + 1) + ", " + yearNumber + ")\">";
+                    calendarString += "" + printedDayCounter;
+                    calendarString += "</a>";
+                    calendarString += "<sup>";
+                    calendarString += "" + numberOfEvents;
+                    calendarString += "</sup>";
+                    calendarString += "</td>";
                     printedDayCounter++;
                 }
             }
@@ -149,9 +202,18 @@ function createCalendar() {
     }
 
     // Row 9
+    calendarString += "<tfoot class=\"table-foot\">";
     calendarString += "<tr>";
-    calendarString += "<td colspan=\"7\"><a href=\"#\" class=\"btn btn\" role=\"button\" onclick=\"changeDate('startRender')\">Back to Today</a></td>";
+    calendarString += "<td colspan=\"7\">";
+    calendarString += "<a href=\"#\" ";
+    calendarString += "style=\"font-weight: bold;\"";
+    calendarString += "class=\"\"";
+    calendarString += "onclick=\"changeDate('startRender')\">";
+    calendarString += "Back to Today";
+    calendarString == "</a>";
+    calendarString += "</td>";
     calendarString += "</tr>";
+    calendarString += "</tfoot>";
 
 
     let object = document.getElementById("calendar");
@@ -159,7 +221,7 @@ function createCalendar() {
 }
 
 function checkEvent(day, month, year) {
-    let numberOfEvents = 0;
+    numberOfEvents = 0;
 
     for (let i = 0; i < myEvent.length; i++) {
         if ((myEvent[i][0] == day) && (myEvent[i][1] == month) && (myEvent[i][2] == year)) {
@@ -175,10 +237,22 @@ function checkEvent(day, month, year) {
     }
 }
 
+function countEventxx(day, month, year) {
+    let numberOfEvents = 0;
+
+    for (let i = 0; i < myEvent.length; i++) {
+        if ((myEvent[i][0] == day) && (myEvent[i][1] == month) && (myEvent[i][2] == year)) {
+            numberOfEvents++;
+        }
+    }
+
+    return numberOfEvents;
+}
+
 function showEvent(day, month, year) {
     let eventString = "";
     eventString += "<table class=\"table table-bordered\">";
-    eventString += "<thead>";
+    eventString += "<thead class=\"table-head\">";
     eventString += "<tr>";
     eventString += "<th>" + "Course Date" + "</th>";
     eventString += "<th>" + "Course Name" + "</th>";
@@ -192,7 +266,14 @@ function showEvent(day, month, year) {
         if ((myEvent[i][0] == day) && (myEvent[i][1] == month) && (myEvent[i][2] == year)) {
             eventString += "<tr>";
             eventString += "<td>" + day + " " + monthList[monthNumber] + " " + year + "</td>";
-            eventString += "<td>" + myEvent[i][5] + "</td>";
+            // insert course url
+            eventString += "<td>"
+            eventString += "<a href=";
+            eventString += "\"" + myEvent[i][8] + "\">";
+            eventString += myEvent[i][5];
+            eventString += "</a>";
+            eventString += "</td>";
+            //
             eventString += "<td>" + myEvent[i][6] + "</td>";
             eventString += "<td>" + myEvent[i][7] + "</td>";
             eventString += "</tr>";
@@ -211,3 +292,4 @@ function showEvent(day, month, year) {
 // 2. Think of more exception case, e.g. event that occur on multiple days
 // 3. Implement list view, day view and year view
 // 4. Implement batch dot of event (if there is an event, there will be dot on right upper corner with the number of events)
+// 5. Set different style for occurred event
