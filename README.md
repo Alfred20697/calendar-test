@@ -1,4 +1,10 @@
 # calendar-test
+
+## How to use?
+1. Clone the repo: `git clone https://github.com/Alfred20697/calendar-test.git`, or
+2. Download the zip file
+3. After download, open `mycalendar.html`.
+
 ## Task to be done
 - [ ] Think of better document organisation
 - [ ] Think of more elements to add
