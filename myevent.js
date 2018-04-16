@@ -19,7 +19,3 @@ myEvent = new Array(
     ["15", "5", "2018", "9:00 AM", "5:30 PM", "Customer Service Skills", "Execs level", "3", "http://intranet/Training?intTrainingID=14"],
     ["4", "6", "2018", "01:00 PM", "02:00 PM", "Lunch & Learn Talk - Cyber Security and Safety", "HQ Staff", "50", "http://intranet/Training?intTrainingID=28"]
 );
-
-
-// Task to be done:
-// 1. Get the data from database

@@ -9,95 +9,97 @@
  *              Clark Hey (http://www.javascriptkit.com/script/script2/eventscalendar.shtml#)
  */
 
- /* Specification: Table */
- .table td { 
-    border-top: none !important; 
+/* Specification: Table */
+
+.table td {
+    border-top: none !important;
 }
 
- .table-center{
+thead th {
+    vertical-align: middle !important;
+}
+
+.table-center {
     text-align: center;
     padding: 100%;
- }
+}
 
- .no-center{
+.no-center {
     text-align: initial;
- }
+}
 
- .table-fix-layout{
+.table-fix-layout {
     table-layout: fixed;
- }
+}
 
- .table-head{
+.table-head {
     background-color: #1565C0;
-    color : #fff;
- }
-
- .table-width-14{
-    width: 14%;
- }
-
- .table-width-15{
-    width: 15%;
- }
-
- .table-width-45{
-    width: 45%;
- }
-
- .table-width-42{
-    width: 42%;
- }
-
- .table-button-top{
     color: #fff;
- }
+}
 
- .table-button-top:hover{
+.table-width-14 {
+    width: 14%;
+}
+
+.table-width-15 {
+    width: 15%;
+}
+
+.table-width-45 {
+    width: 45%;
+}
+
+.table-width-42 {
+    width: 42%;
+}
+
+.table-button-top {
+    color: #fff;
+}
+
+.table-button-top:hover {
     color: #fff;
     text-decoration: underline;
- }
+}
 
- /* Specification: Today */
- .today{
+/* Specification: Today */
+
+.today {
     background-color: #BBDEFB;
-    color : #1976D2;
+    color: #1976D2;
     border-radius: 10%;
     font-weight: bold;
- }
+}
 
- /* Specification: Event */
- .event{
-    background-color:  #1E88E5;
+/* Specification: Event */
+
+.event {
+    background-color: #1E88E5;
     color: #E3F2FD;
     border-radius: 100%;
     font-weight: bold;
- }
+}
 
- .today a,
- .today a:hover,
- .event a,
- .event a:hover{
+.today a, .today a:hover, .event a, .event a:hover {
     color: #E3F2FD;
- }
+}
 
- /* Specification: Event & Today */
- .event-today{
+/* Specification: Event & Today */
+
+.event-today {
     background-color: #BBDEFB;
-    color : #1976D2;
+    color: #1976D2;
     border-radius: 50%;
     font-weight: bold;
- }
+}
 
- .event-today a,
- .event-today a:hover{
+.event-today a, .event-today a:hover {
     color: #1976D2;
- }
+}
 
- @media screen and (max-width: 600px) {
-    .table-fix-layout{
-        table-layout: auto;
-     }
- }
-
- /* Task to be done:
- 1. Implement better style and design with reference to dycalendar.css */
+@media screen and (max-width: 600px) {
+    .hide-text {
+        display: none;
+    }
+    .adj {}
+}

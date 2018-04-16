@@ -81,7 +81,7 @@ function createCalendar() {
     calendarString = "";
 
     // Row 1
-    calendarString += "<table class=\"table table-bordered table-fix-layout\">";
+    calendarString += "<table class=\"table table-fix-layout\">";
     calendarString += "<thead class=\"table-head\">";
     calendarString += "<tr>";
 
@@ -97,7 +97,7 @@ function createCalendar() {
     // calendarString += "<a href=\"#\" ";
     // calendarString += "class=\"table-button-top\"";
     // calendarString += "onclick=\"changeDate('previousYear')\">";
-    calendarString += "Prev Month";
+    calendarString += "<span class=\"hide-text\">Prev Month</span>";
     calendarString == "</a>";
     calendarString += "</th>";
 
@@ -109,7 +109,7 @@ function createCalendar() {
     // calendarString += "<a href=\"#\" ";
     // calendarString += "class=\"table-button-top\"";
     // calendarString += "onclick=\"changeDate('nextYear')\">";
-    calendarString += "Next Month";
+    calendarString += "<span class=\"hide-text\">Next Month</span>";
     calendarString == "</a>";
     calendarString += "</th>";
 
@@ -235,10 +235,10 @@ function showEvent(day, month, year) {
     eventString += "<table class=\"table table-bordered table-fix-layout\">";
     eventString += "<thead class=\"table-head\">";
     eventString += "<tr>";
-    eventString += "<th class=\"table-width-15\">" + "Course Date" + "</th>";
-    eventString += "<th class=\"table-width-45 no-center\">" + "Course Name" + "</th>";
-    eventString += "<th class=\"table-width-15\">" + "Target Group" + "</th>";
-    eventString += "<th class=\"table-width-15\">" + "* Available Seats" + "</th>";
+    eventString += "<th class=\"adj table-width-15\">" + "Course Date" + "</th>";
+    eventString += "<th class=\"adj table-width-45 no-center\">" + "Course Name" + "</th>";
+    eventString += "<th class=\"adj table-width-15\">" + "Target Group" + "</th>";
+    eventString += "<th class=\"adj table-width-15\">" + "Seats Available" + "</th>";
     eventString += "</tr>";
     eventString += "</thead>";
 
@@ -266,11 +266,3 @@ function showEvent(day, month, year) {
     let object = document.getElementById("event");
     object.innerHTML = eventString;
 }
-
-
-// Task to be done:
-// 1. Implement better algorithm for creating timetable and event table with reference to dycalendar.js
-// 2. Think of more exception case, e.g. event that occur on multiple days
-// 3. Implement list view, day view and year view
-// 4. Implement batch dot of event (if there is an event, there will be dot on right upper corner with the number of events)
-// 5. Set different style for occurred event
