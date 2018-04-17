@@ -157,19 +157,25 @@ function createCalendar() {
         if ((i >= firstDay) && (i <= (numberOfDays + firstDay - 1))) {
             if (checkEvent(printedDayCounter, monthNumber + 1, yearNumber)) {
                 if ((printedDayCounter == (todaysDate)) && (monthNumber == todaysMonth) && (yearNumber == todaysYear)) {
-                    calendarString += "<td class=\"event-today\">";
+                    calendarString += "<td class=\"event-today date-center-adjust\">";
                     calendarString += "<a href=\"#\" ";
                     calendarString += "onclick=\"showEvent(" + printedDayCounter + ", " + (monthNumber + 1) + ", " + yearNumber + ")\">";
                     calendarString += "" + printedDayCounter;
+                    calendarString += "<span class=\"event-name hide-text\">";
+                    calendarString += ": " + getEventName(printedDayCounter, monthNumber + 1, yearNumber);
+                    calendarString += "</span>";
                     calendarString += "</a>";
                     calendarString += "</td>";
                     printedDayCounter++;
                 }
                 else {
-                    calendarString += "<td class=\"event\">";
+                    calendarString += "<td class=\"event date-center-adjust\">";
                     calendarString += "<a href=\"#\" ";
                     calendarString += "onclick=\"showEvent(" + printedDayCounter + ", " + (monthNumber + 1) + ", " + yearNumber + ")\">";
                     calendarString += "" + printedDayCounter;
+                    calendarString += "<span class=\"event-name hide-text\">";
+                    calendarString += ": " + getEventName(printedDayCounter, monthNumber + 1, yearNumber);
+                    calendarString += "</span>";
                     calendarString += "</a>";
                     calendarString += "</td>";
                     printedDayCounter++;
@@ -195,7 +201,7 @@ function createCalendar() {
     }
 
     // Row 9
-    calendarString += "<tfoot class=\"table-foot\">";
+    calendarString += "<tfoot>";
     calendarString += "<tr>";
     calendarString += "<td colspan=\"7\">";
     calendarString += "<a href=\"#\" ";
@@ -266,3 +272,17 @@ function showEvent(day, month, year) {
     let object = document.getElementById("event");
     object.innerHTML = eventString;
 }
+
+function getEventName(day, month, year) {
+    let eventName = "";
+
+    for (let i = 0; i < myEvent.length; i++) {
+        if ((myEvent[i][0] == day) && (myEvent[i][1] == month) && (myEvent[i][2] == year)) {
+            eventName = myEvent[i][5];
+            break;
+        }
+    }
+
+    return eventName.length > 30 ? eventName.substring(0, 30) + " ..." : eventName;
+}
+

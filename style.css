@@ -76,7 +76,8 @@ thead th {
 .event {
     background-color: #1E88E5;
     color: #E3F2FD;
-    border-radius: 100%;
+    border-radius: 20%;
+    border: 1px solid white;
     font-weight: bold;
 }
 
@@ -89,7 +90,7 @@ thead th {
 .event-today {
     background-color: #BBDEFB;
     color: #1976D2;
-    border-radius: 50%;
+    border-radius: 20%;
     font-weight: bold;
 }
 
@@ -97,9 +98,20 @@ thead th {
     color: #1976D2;
 }
 
-@media screen and (max-width: 600px) {
+.event-name {
+    color: #fff;
+}
+
+.date-center-adjust {
+    text-align: initial;
+}
+
+@media screen and (max-width: 768px) {
     .hide-text {
         display: none;
     }
-    .adj {}
+
+    .date-center-adjust {
+        text-align: center;
+    }
 }
