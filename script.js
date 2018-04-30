@@ -499,24 +499,6 @@ function createCalendar() {
                     printedDayCounter++;
                 }
                 else {
-<<<<<<< HEAD
-                    let d = new Date(yearNumber, monthNumber, printedDayCounter);
-                    if (d < today) {
-                        calendarString += "<td>" + printedDayCounter + "</td>";
-                        printedDayCounter++;
-                    } else {
-                        calendarString += "<td class=\"event date-center-adjust\">";
-                        calendarString += "<a href=\"#\" ";
-                        calendarString += "onclick=\"showEvent(" + printedDayCounter + ", " + (monthNumber + 1) + ", " + yearNumber + ")\">";
-                        calendarString += "" + printedDayCounter;
-                        calendarString += "<span class=\"event-name hide-text\">";
-                        calendarString += ": " + getEventName(printedDayCounter, monthNumber + 1, yearNumber);
-                        calendarString += "</span>";
-                        calendarString += "</a>";
-                        calendarString += "</td>";
-                        printedDayCounter++;
-                    }
-=======
                     calendarString += "<td class=\"event date-center-adjust\">";
                     calendarString += "<a href=\"#\" ";
                     calendarString += "onclick=\"showEvent(" + printedDayCounter + ", " + (monthNumber + 1) + ", " + yearNumber + ")\"";
@@ -527,7 +509,6 @@ function createCalendar() {
                     calendarString += "</a>";
                     calendarString += "</td>";
                     printedDayCounter++;
->>>>>>> 61e1040c1ba6079a8714a0534b28e3064611dfca
                 }
             }
             else {
@@ -682,11 +663,7 @@ function getFullEventName(day, month, year) {
     }
     eventName = eventName.substring(0, eventName.length - 4);
 
-<<<<<<< HEAD
-    return eventName.length > 30 ? eventName.substring(0, 30) + " (...)" : eventName;
-=======
     return eventName;
->>>>>>> 61e1040c1ba6079a8714a0534b28e3064611dfca
 }
 
 /**
