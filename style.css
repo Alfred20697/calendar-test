@@ -1,4 +1,4 @@
-/**
+/* /**
  * Author: Alfred Loo
  * Date Edited: 13/04/2018
  * Contact: alfred97620@gmail.com
@@ -9,7 +9,7 @@
  *              Clark Hey (http://www.javascriptkit.com/script/script2/eventscalendar.shtml#)
  */
 
-/* Specification: Table */
+/* Specification: Table 
 
 .table td {
     border-top: none !important;
@@ -62,7 +62,7 @@ thead th {
     text-decoration: underline;
 }
 
-/* Specification: Today */
+/* Specification: Today 
 
 .today {
     background-color: #BBDEFB;
@@ -71,7 +71,7 @@ thead th {
     font-weight: bold;
 }
 
-/* Specification: Event */
+/* Specification: Event 
 
 .event {
     background-color: #1E88E5;
@@ -85,7 +85,7 @@ thead th {
     color: #E3F2FD;
 }
 
-/* Specification: Event & Today */
+/* Specification: Event & Today 
 
 .event-today {
     background-color: #BBDEFB;
@@ -113,5 +113,101 @@ thead th {
 
     .date-center-adjust {
         text-align: center;
+    }
+} */
+
+
+/*My Code starts here*/
+
+/*Overall*/
+
+.table-layout-fix {
+    table-layout: fixed;
+}
+
+.ex {
+    border-top: none !important;
+}
+
+/*table head*/
+
+thead th {
+    vertical-align: middle !important;
+}
+
+thead .table-head-no-center {
+    text-align: initial;
+}
+
+.table-head {
+    background-color: #1976D2;
+    color: #fff;
+}
+
+.table-head th {
+    text-align: center;
+}
+
+/*table button*/
+
+.table-button-top {
+    color: #fff;
+}
+
+.table-button-top:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/*table footer*/
+
+.table-foot {
+    text-align: right;
+}
+
+/*today, event, and event-today*/
+
+.today {
+    color: #1976D2;
+    font-weight: bold;
+    background-color: #BBDEFB;
+    border: 2px solid transparent;
+}
+
+.event {
+    color: #1976D2;
+    font-weight: bold;
+}
+
+.today a, .today a:hover, .event a, .event a:hover {
+    color: #1976D2;
+}
+
+.colorise {
+    color: #1976D2;
+    border: 1px solid transparent;
+    margin-bottom: -5px;
+}
+
+.dropdown-toggle:active, .dropdown-toggle:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .hide-text {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .table-width-14 {
+        width: 14%;
+    }
+    .table-width-28 {
+        width: 28%;
+    }
+    .table-width-44 {
+        width: 44%;
     }
 }

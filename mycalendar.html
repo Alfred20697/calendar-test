@@ -18,25 +18,28 @@ Credits To: Clark Hey (http://www.javascriptkit.com/script/script2/eventscalenda
     <title>Calendar</title>
 
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+        crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
         crossorigin="anonymous">
 </head>
 
-<body onload="changeDate('startRender')">
+<body>
     <div class="container">
         <h2>Calendar</h2>
         <h3>Training Calendar</h3>
 
-        <table class="table table-center table-fix-layout">
+        <!-- <table class="table table-center table-fix-layout">
             <tbody>
                 <tr>
                     <td>
                         <b>Course (Click on highlighted date to show details)</b>
                         <br>
                         <div id="event">
-                            <!-- Dynamically Filled -->
+                            <!-- Dynamically Filled 
                             <table class="table table-bordered table-fix-layout">
                                 <thead class="table-head">
                                     <tr>
@@ -53,7 +56,78 @@ Credits To: Clark Hey (http://www.javascriptkit.com/script/script2/eventscalenda
                 <tr>
                     <td>
                         <div id="calendar">
+                            <!-- Dynamically Filled 
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table> -->
+        <table class="table table-layout-fixed">
+            <tbody>
+                <tr>
+                    <td>
+                        <b>Course (Click on highlighted date to show details)</b>
+                        <br>
+                        <div id="event">
                             <!-- Dynamically Filled -->
+                            <table class="table table-bordered table-layout-fixed">
+                                <thead class="table-head">
+                                    <tr>
+                                        <th class="table-width-14">Course Date</th>
+                                        <th class="table-head-no-center">Course Name</th>
+                                        <th class="table-width-14">Target Group</th>
+                                        <th class="table-width-14">* Available Seats</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7" class="ex table-foot">
+                        <a id="event-func" class="showEvent" href="#">
+                            <i id="event-arrow" class="fas fa-chevron-down fa-lg" title="Click to show event"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="calendar">
+                            <!-- Dynamically Filled -->
+                            <table class="table table-layout-fixed">
+                                <thead class="table-head">
+                                    <tr>
+                                        <th class="table-width-14">
+                                            <a href="#" class="table-button-top" onclick="changeDate('previousMonth')">
+                                                <i class="fas fa-chevron-left fa-lg"></i>
+                                            </a>
+                                        </th>
+                                        <th class="table-width-14">
+                                            <span class="hide-text">Previous Month</span>
+                                        </th>
+                                        <th colspan="3" class="table-width-44">
+                                            28 April 2018
+                                        </th>
+                                        <th class="table-width-14">
+                                            <span class="hide-text">Next Month</span>
+                                        </th>
+                                        <th class="table-width-14">
+                                            <a href="#" class="table-button-top" onclick="changeDate('nextMonth')">
+                                                <i class="fas fa-chevron-right fa-lg"></i>
+                                            </a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <td class="table-width-14">Sun</td>
+                                    <td class="table-width-14">Mon</td>
+                                    <td class="table-width-14">Tue</td>
+                                    <td class="table-width-14">Wed</td>
+                                    <td class="table-width-14">Thu</td>
+                                    <td class="table-width-14">Fri</td>
+                                    <td class="table-width-14">Sat</td>
+                                </tr>
+                            </table>
                         </div>
                     </td>
                 </tr>
@@ -61,14 +135,20 @@ Credits To: Clark Hey (http://www.javascriptkit.com/script/script2/eventscalenda
         </table>
     </div>
 
-    <script src="script.js"></script>
-    <script src="myEvent.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js" crossorigin="anonymous" integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+    </script>
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js" crossorigin="anonymous" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+    </script>
+    <script src="script.js"></script>
+    <script src="myEvent.js"></script>
 </body>
 
 </html>
