@@ -169,16 +169,22 @@ function createCalendar() {
                     printedDayCounter++;
                 }
                 else {
-                    calendarString += "<td class=\"event date-center-adjust\">";
-                    calendarString += "<a href=\"#\" ";
-                    calendarString += "onclick=\"showEvent(" + printedDayCounter + ", " + (monthNumber + 1) + ", " + yearNumber + ")\">";
-                    calendarString += "" + printedDayCounter;
-                    calendarString += "<span class=\"event-name hide-text\">";
-                    calendarString += ": " + getEventName(printedDayCounter, monthNumber + 1, yearNumber);
-                    calendarString += "</span>";
-                    calendarString += "</a>";
-                    calendarString += "</td>";
-                    printedDayCounter++;
+                    let d = new Date(yearNumber, monthNumber, printedDayCounter);
+                    if (d < today) {
+                        calendarString += "<td>" + printedDayCounter + "</td>";
+                        printedDayCounter++;
+                    } else {
+                        calendarString += "<td class=\"event date-center-adjust\">";
+                        calendarString += "<a href=\"#\" ";
+                        calendarString += "onclick=\"showEvent(" + printedDayCounter + ", " + (monthNumber + 1) + ", " + yearNumber + ")\">";
+                        calendarString += "" + printedDayCounter;
+                        calendarString += "<span class=\"event-name hide-text\">";
+                        calendarString += ": " + getEventName(printedDayCounter, monthNumber + 1, yearNumber);
+                        calendarString += "</span>";
+                        calendarString += "</a>";
+                        calendarString += "</td>";
+                        printedDayCounter++;
+                    }
                 }
             }
             else {
@@ -283,6 +289,6 @@ function getEventName(day, month, year) {
         }
     }
 
-    return eventName.length > 30 ? eventName.substring(0, 30) + " ..." : eventName;
+    return eventName.length > 30 ? eventName.substring(0, 30) + " (...)" : eventName;
 }
 
