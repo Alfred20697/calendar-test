@@ -731,7 +731,7 @@ function hideFullEventList() {
 }
 
 $(document).ready(function () {
-    changeDate("startRender");
+    // changeDate("startRender");
 });
 
 $(document).on("click", ".changeDateStart", function () {
