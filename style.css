@@ -1,126 +1,6 @@
-/* /**
- * Author: Alfred Loo
- * Date Edited: 13/04/2018
- * Contact: alfred97620@gmail.com
- * Link: https://github.com/Alfred20697
- * Version: 0.3
- * License: N/A
- * Credits To:  Yusuf Shakeel (https://github.com/yusufshakeel/dyCalendarJS), 
- *              Clark Hey (http://www.javascriptkit.com/script/script2/eventscalendar.shtml#)
- */
-
-/* Specification: Table 
-
-.table td {
-    border-top: none !important;
-}
-
-thead th {
-    vertical-align: middle !important;
-}
-
-.table-center {
-    text-align: center;
-    padding: 100%;
-}
-
-.no-center {
-    text-align: initial;
-}
-
-.table-fix-layout {
-    table-layout: fixed;
-}
-
-.table-head {
-    background-color: #1565C0;
-    color: #fff;
-}
-
-.table-width-14 {
-    width: 14%;
-}
-
-.table-width-15 {
-    width: 15%;
-}
-
-.table-width-45 {
-    width: 45%;
-}
-
-.table-width-42 {
-    width: 42%;
-}
-
-.table-button-top {
-    color: #fff;
-}
-
-.table-button-top:hover {
-    color: #fff;
-    text-decoration: underline;
-}
-
-/* Specification: Today 
-
-.today {
-    background-color: #BBDEFB;
-    color: #1976D2;
-    border-radius: 10%;
-    font-weight: bold;
-}
-
-/* Specification: Event 
-
-.event {
-    background-color: #1E88E5;
-    color: #E3F2FD;
-    border-radius: 20%;
-    border: 1px solid white;
-    font-weight: bold;
-}
-
-.today a, .today a:hover, .event a, .event a:hover {
-    color: #E3F2FD;
-}
-
-/* Specification: Event & Today 
-
-.event-today {
-    background-color: #BBDEFB;
-    color: #1976D2;
-    border-radius: 20%;
-    font-weight: bold;
-}
-
-.event-today a, .event-today a:hover {
-    color: #1976D2;
-}
-
-.event-name {
-    color: #fff;
-}
-
-.date-center-adjust {
-    text-align: initial;
-}
-
-@media screen and (max-width: 768px) {
-    .hide-text {
-        display: none;
-    }
-
-    .date-center-adjust {
-        text-align: center;
-    }
-} */
-
-
 /*My Code starts here*/
 
 /*Overall*/
-
 .table-layout-fix {
     table-layout: fixed;
 }
@@ -130,7 +10,6 @@ thead th {
 }
 
 /*table head*/
-
 thead th {
     vertical-align: middle !important;
 }
@@ -149,7 +28,6 @@ thead .table-head-no-center {
 }
 
 /*table button*/
-
 .table-button-top {
     color: #fff;
 }
@@ -160,13 +38,11 @@ thead .table-head-no-center {
 }
 
 /*table footer*/
-
 .table-foot {
     text-align: right;
 }
 
 /*today, event, and event-today*/
-
 .today {
     color: #1976D2;
     font-weight: bold;
@@ -189,7 +65,8 @@ thead .table-head-no-center {
     margin-bottom: -5px;
 }
 
-.dropdown-toggle:active, .dropdown-toggle:focus {
+.dropdown-toggle:active,
+.dropdown-toggle:focus {
     color: #fff;
     text-decoration: none;
 }
@@ -204,9 +81,11 @@ thead .table-head-no-center {
     .table-width-14 {
         width: 14%;
     }
+
     .table-width-28 {
         width: 28%;
     }
+
     .table-width-44 {
         width: 44%;
     }
