@@ -295,7 +295,8 @@ function showEvent(day, month, year) {
             // insert course url
             eventString += "<td class=\"table-head-no-center\">";
             eventString += "<a ";
-            eventString += "href=\"http://intranet/Training?intTrainingID=" + myEvent2[i].TrainID + "\"";
+            // eventString += "href=\"http://intranet/Training?intTrainingID=" + myEvent2[i].TrainID + "\"";
+            eventString += "href=\"#\"";
             eventString += " title=\"" + myEvent2[i].Title + "\"> ";
             eventString += myEvent2[i].Title;
             eventString += "</a>";
